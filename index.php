@@ -1,11 +1,12 @@
 <?php
 // index.php
 session_start();
+require_once __DIR__ . '/config/database.php';
 
 if (isset($_SESSION['user_id'])) {
-    header("Location: pages/dashboard/index.php");
+    header("Location: " . $base_url . "/pages/dashboard/index.php");
 } else {
-    header("Location: pages/auth/login.php");
+    header("Location: " . $base_url . "/pages/auth/login.php");
 }
 exit;
 ?>

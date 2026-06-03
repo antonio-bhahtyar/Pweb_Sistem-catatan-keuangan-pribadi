@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="../dashboard/index.php">💰 FinanceNote</a>
+        <a class="navbar-brand fw-bold" href="<?= $base_url ?>/pages/dashboard/index.php">💰 FinanceNote</a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
@@ -14,7 +14,7 @@
                     </span>
                 </li>
                 <li class="nav-item">
-                    <a href="../actions/auth/keluar.php" class="btn btn-outline-light btn-sm">Keluar</a>
+                    <a href="<?= $base_url ?>/proses/auth/logout.php" class="btn btn-outline-light btn-sm">Keluar</a>
                 </li>
             </ul>
         </div>

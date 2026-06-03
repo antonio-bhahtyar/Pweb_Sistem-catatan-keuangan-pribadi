@@ -2,9 +2,14 @@
 // konfigurasi/database.php
 
 $host     = 'localhost';
-$dbname   = 'finance_note';      // Pastikan nama database ini sama
-$username = 'root';              // Default Laragon
-$password = '';                  // Kosongkan jika pakai Laragon default
+$dbname   = 'finance_note';
+$username = 'root';
+$password = '';
+
+// Auto-detect base URL (bisa diakses via localhost/folder atau virtual host)
+$doc_root = rtrim($_SERVER['DOCUMENT_ROOT'], '/\\');
+$project_root = dirname(__DIR__);
+$base_url = str_replace('\\', '/', substr($project_root, strlen($doc_root)));
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
