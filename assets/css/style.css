@@ -1,0 +1,379 @@
+/* ============================================================
+   FinanceNote - Custom Styles
+   ============================================================ */
+
+/* === Sidebar === */
+.sidebar {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.sidebar .nav-link {
+    border-radius: 8px;
+    margin-bottom: 2px;
+    padding: 10px 16px;
+    transition: all 0.2s;
+    color: #adb5bd;
+}
+
+.sidebar .nav-link:hover {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+}
+
+.sidebar .nav-link.active {
+    background: rgba(13,110,253,0.3);
+    color: #fff;
+    font-weight: 600;
+}
+
+.sidebar .nav-link i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar hr {
+    opacity: 0.15;
+}
+
+/* === Navbar === */
+.navbar-brand {
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+}
+
+/* === Cards === */
+.card {
+    border: none;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border-radius: 12px;
+    transition: box-shadow 0.2s;
+}
+
+.card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    border-radius: 12px 12px 0 0 !important;
+    font-weight: 600;
+}
+
+.card-header.bg-primary {
+    background: linear-gradient(135deg, #0d6efd, #0b5ed7) !important;
+}
+
+.card-header.bg-success {
+    background: linear-gradient(135deg, #198754, #157347) !important;
+}
+
+.card-header.bg-danger {
+    background: linear-gradient(135deg, #dc3545, #bb2d3b) !important;
+}
+
+.card-header.bg-warning {
+    background: linear-gradient(135deg, #ffc107, #e0a800) !important;
+}
+
+.card-header.bg-dark {
+    background: linear-gradient(135deg, #212529, #1a1e21) !important;
+}
+
+/* === Stat Cards (Dashboard) === */
+.stat-card {
+    border-radius: 12px;
+    transition: transform 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+}
+
+.stat-card .card-body {
+    padding: 24px;
+}
+
+.stat-card h5 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.stat-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+/* === Tables === */
+.table th {
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6c757d;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(13,110,253,0.04);
+}
+
+/* === Forms === */
+.form-control:focus, .form-select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13,110,253,0.15);
+}
+
+.form-control-lg, .form-select-lg {
+    border-radius: 10px;
+}
+
+/* === Buttons === */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-lg {
+    border-radius: 10px;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #0d6efd, #0b5ed7);
+    border: none;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #198754, #157347);
+    border: none;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #dc3545, #bb2d3b);
+    border: none;
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #ffc107, #e0a800);
+    border: none;
+    color: #212529;
+}
+
+/* === Progress Bars === */
+.progress {
+    border-radius: 10px;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: width 0.6s ease;
+}
+
+/* === Badges === */
+.badge {
+    font-weight: 500;
+    padding: 0.35em 0.65em;
+    border-radius: 6px;
+}
+
+/* === Alerts === */
+.alert {
+    border: none;
+    border-radius: 10px;
+}
+
+.alert-dismissible .btn-close {
+    padding: 1.25rem;
+}
+
+/* === Page Title === */
+.page-title {
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 1.5rem;
+}
+
+/* === Filter Bar === */
+.filter-bar {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+/* === Flash Message Animation === */
+.alert-flash {
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === Category Color Swatch === */
+.color-swatch {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 2px solid rgba(0,0,0,0.1);
+}
+
+/* === Budget Progress === */
+.budget-progress .progress-bar {
+    min-width: 2rem;
+}
+
+/* === Report Charts === */
+.chart-container {
+    position: relative;
+    width: 100%;
+}
+
+.chart-container canvas {
+    max-height: 300px;
+}
+
+/* === Settings Tabs === */
+.nav-tabs .nav-link {
+    border: none;
+    color: #6c757d;
+    padding: 12px 20px;
+    border-radius: 8px 8px 0 0;
+}
+
+.nav-tabs .nav-link.active {
+    color: #0d6efd;
+    border-bottom: 2px solid #0d6efd;
+    background: transparent;
+}
+
+/* === Profile Photo === */
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.profile-photo-placeholder {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #6c757d;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    color: #fff;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .sidebar {
+        min-height: auto;
+        padding: 12px !important;
+    }
+
+    .sidebar .nav {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .sidebar .nav-link {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
+    .stat-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .card-header h5 {
+        font-size: 1rem;
+    }
+
+    .table {
+        font-size: 0.85rem;
+    }
+}
+
+/* === Print (Laporan) === */
+@media print {
+    .sidebar, .navbar, .btn, form, .filter-bar, .modal {
+        display: none !important;
+    }
+
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #dee2e6 !important;
+    }
+
+    body {
+        font-size: 12px;
+    }
+}
+
+/* === Scrollbar === */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* === Empty State === */
+.empty-state {
+    text-align: center;
+    padding: 48px 20px;
+    color: #adb5bd;
+}
+
+.empty-state i {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.empty-state p {
+    font-size: 1rem;
+}
