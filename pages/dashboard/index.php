@@ -37,7 +37,7 @@ $pengeluaran = $stmt->fetchColumn();
 <div class="container-fluid">
     <div class="row">
         <!-- Sidebar -->
-        <div class="col-md-3 col-lg-2 bg-dark text-white p-3" style="min-height: 100vh;">
+        <div class="col-md-3 col-lg-2 sidebar text-white p-3" style="min-height: 100vh;">
             <ul class="nav flex-column">
                 <li class="nav-item"><a href="index.php" class="nav-link active text-white"><i class="fas fa-home"></i> Dashboard</a></li>
                 <li class="nav-item"><a href="../transaksi/" class="nav-link text-white"><i class="fas fa-exchange-alt"></i> Transaksi</a></li>

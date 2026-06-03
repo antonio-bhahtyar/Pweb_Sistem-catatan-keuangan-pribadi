@@ -5,7 +5,7 @@
 /* === Sidebar === */
 .sidebar {
     min-height: 100vh;
-    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    background: linear-gradient(180deg, #2769bb 0%, #093ac2 100%);
 }
 
 .sidebar .nav-link {
@@ -38,6 +38,10 @@
 }
 
 /* === Navbar === */
+.navbar.bg-primary {
+    background: linear-gradient(135deg, #2769bb 0%, #093ac2 100%) !important;
+}
+
 .navbar-brand {
     font-size: 1.25rem;
     letter-spacing: 0.5px;
@@ -46,7 +50,7 @@
 /* === Cards === */
 .card {
     border: none;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    box-shadow: 0 2px 12px rgba(16, 112, 160, 0.06);
     border-radius: 12px;
     transition: box-shadow 0.2s;
 }
