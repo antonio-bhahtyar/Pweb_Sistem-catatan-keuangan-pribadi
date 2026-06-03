@@ -1,5 +1,5 @@
 <?php
-// pages/transaksis/add.php
+// pages/transaksi/add.php
 $judul_halaman = "Tambah Transaksi";
 require_once '../../includes/header.php';
 require_once '../../includes/navbar.php';

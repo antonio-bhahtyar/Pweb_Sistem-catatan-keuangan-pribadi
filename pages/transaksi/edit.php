@@ -1,5 +1,5 @@
 <?php
-// pages/transaksis/edit.php
+// pages/transaksi/edit.php
 $judul_halaman = "Edit Transaksi";
 require_once '../../includes/header.php';
 require_once '../../includes/navbar.php';
