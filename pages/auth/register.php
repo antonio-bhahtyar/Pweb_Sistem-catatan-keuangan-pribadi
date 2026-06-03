@@ -119,14 +119,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <input type="email" name="email" class="form-control form-control-lg" required>
                     </div>
 
-                    <div class="mb-4">
+                    <div class="mb-3">
                         <label class="form-label fw-semibold">Password</label>
-                        <input type="password" name="password" class="form-control form-control-lg" required>
+                        <input type="password" name="password" id="password" class="form-control form-control-lg"
+                               placeholder="Minimal 6 karakter" required>
+                        <div class="progress mt-1" style="height: 5px;">
+                            <div id="passwordStrength" class="progress-bar" style="width: 0%;"></div>
+                        </div>
+                        <small id="passwordStrengthText" class="text-muted"></small>
                     </div>
 
                     <div class="mb-5">
                         <label class="form-label fw-semibold">Konfirmasi Password</label>
-                        <input type="password" name="password2" class="form-control form-control-lg" required>
+                        <input type="password" name="password2" id="password2" class="form-control form-control-lg" required>
+                        <small id="passwordMatchMsg"></small>
                     </div>
 
                     <button type="submit" class="btn btn-register text-white w-100">Daftar Sekarang</button>
@@ -141,5 +147,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
 
+    <script src="<?= $base_url ?>/assets/js/auth.js"></script>
 </body>
 </html>

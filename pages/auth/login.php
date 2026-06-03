@@ -140,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <input type="password" name="password" id="password" 
                                    class="form-control form-control-lg" 
                                    placeholder="Masukkan password anda" required>
-                            <span class="input-group-text" onclick="togglePassword()" style="cursor:pointer;">
+                            <span class="input-group-text" id="togglePassword" style="cursor:pointer;">
                                 <i class="bi bi-eye-slash" id="toggleIcon"></i>
                             </span>
                         </div>
@@ -159,18 +159,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
 
-    <script>
-        function togglePassword() {
-            const pwd = document.getElementById('password');
-            const icon = document.getElementById('toggleIcon');
-            if (pwd.type === 'password') {
-                pwd.type = 'text';
-                icon.classList.replace('bi-eye-slash', 'bi-eye');
-            } else {
-                pwd.type = 'password';
-                icon.classList.replace('bi-eye', 'bi-eye-slash');
-            }
-        }
-    </script>
+    <script src="<?= $base_url ?>/assets/js/auth.js"></script>
 </body>
 </html>

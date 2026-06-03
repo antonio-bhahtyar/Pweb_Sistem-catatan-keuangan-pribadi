@@ -45,6 +45,11 @@ $pengeluaran = $stmt->fetchColumn();
                 <li class="nav-item"><a href="../budget/" class="nav-link text-white"><i class="fas fa-chart-bar"></i> Anggaran</a></li>
                 <li class="nav-item"><a href="../laporan/" class="nav-link text-white"><i class="fas fa-file-alt"></i> Laporan</a></li>
                 <li class="nav-item"><a href="../settings/" class="nav-link text-white"><i class="fas fa-cog"></i> Pengaturan</a></li>
+                <?php if (($_SESSION['role'] ?? 'user') === 'admin'): ?>
+                <li class="nav-item mt-3"><hr class="border-secondary"></li>
+                <li class="nav-item"><small class="text-muted ms-3">ADMIN PANEL</small></li>
+                <li class="nav-item"><a href="../admin/users.php" class="nav-link text-white"><i class="fas fa-users"></i> Kelola User</a></li>
+                <?php endif; ?>
             </ul>
         </div>
 
