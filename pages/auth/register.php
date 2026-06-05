@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     <style>
         body {
-            background: linear-gradient(135deg, #0f3d6b 0%, #3b82f6 100%);
+            background: linear-gradient(135deg, #6fb3a8 0%, #3d8a82 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -72,14 +72,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         .card-header {
-            background: linear-gradient(to right, #0f3d6b, #3b82f6);
+            background: linear-gradient(to right, #6fb3a8, #3d8a82);
             color: white;
             padding: 35px 30px;
             text-align: center;
         }
 
+        .card-header .logo-img {
+            max-width: 180px;
+            margin-bottom: 12px;
+        }
+
         .btn-register {
-            background: linear-gradient(to right, #2563eb, #60a5fa);
+            background: linear-gradient(to right, #6fb3a8, #3d8a82);
             border: none;
             border-radius: 30px;
             padding: 14px;

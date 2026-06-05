@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     <style>
         body {
-            background: linear-gradient(135deg, #0f3d6b 0%, #7ba2cc 100%);
+            background: linear-gradient(135deg, #6fb3a8 0%, #3d8a82 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         .left-side {
-            background: #0f3d6b;
+            background: linear-gradient(180deg, #6fb3a8 0%, #3d8a82 100%);
             color: white;
             padding: 40px;
             display: flex;
@@ -90,12 +90,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         .logo-img {
-            max-width: 120px;
+            max-width: 200px;
             margin-bottom: 18px;
         }
 
         .btn-login {
-            background: linear-gradient(to right, #0d6efd, #11a3a8);
+            background: linear-gradient(to right, #6fb3a8, #3d8a82);
             border: none;
             border-radius: 30px;
             padding: 12px;
@@ -119,8 +119,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="col-lg-6 right-side">
                 <div class="logo-placeholder">
                     <img src="<?= $base_url ?>/assets/images/logo.png" alt="FinanceNote Logo" class="logo-img">
-                    <h3 class="fw-bold text-primary">FinanceNote</h3>
-                    <small class="text-muted">Kelola keuanganmu dengan mudah</small>
                 </div>
 
                 <?php if ($error): ?>
