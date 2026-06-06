@@ -1,8 +1,14 @@
-CREATE DATABASE IF NOT EXISTS finance_note 
-CHARACTER SET utf8mb4 
+CREATE DATABASE IF NOT EXISTS finance_note
+CHARACTER SET utf8mb4
 COLLATE utf8mb4_general_ci;
 
 USE finance_note;
+
+-- Drop tabel lama (urutan terbalik dari FK) agar import ulang aman
+DROP TABLE IF EXISTS anggaran;
+DROP TABLE IF EXISTS transaksi;
+DROP TABLE IF EXISTS kategori;
+DROP TABLE IF EXISTS users;
 
 -- TABEL USERS
 CREATE TABLE users (
@@ -80,10 +86,10 @@ INSERT INTO kategori (user_id, nama_kategori, tipe, warna) VALUES
 (2, 'Tagihan',    'pengeluaran', '#6f42c1');
 
 INSERT INTO transaksi (user_id, kategori_id, tipe, jumlah, tanggal, keterangan) VALUES
-(2, 1, 'pemasukan',   5000000, CURDATE() - INTERVAL 10 DAY, 'Gaji bulan ini'),
-(2, 3, 'pengeluaran',  150000, CURDATE() - INTERVAL  5 DAY, 'Makan siang mingguan'),
-(2, 4, 'pengeluaran',   75000, CURDATE() - INTERVAL  3 DAY, 'Bensin'),
-(2, 5, 'pengeluaran',  300000, CURDATE() - INTERVAL  1 DAY, 'Listrik');
+(2, 1, 'pemasukan',   5000000, DATE_SUB(CURDATE(), INTERVAL 10 DAY), 'Gaji bulan ini'),
+(2, 3, 'pengeluaran',  150000, DATE_SUB(CURDATE(), INTERVAL  5 DAY), 'Makan siang mingguan'),
+(2, 4, 'pengeluaran',   75000, DATE_SUB(CURDATE(), INTERVAL  3 DAY), 'Bensin'),
+(2, 5, 'pengeluaran',  300000, DATE_SUB(CURDATE(), INTERVAL  1 DAY), 'Listrik');
 
 INSERT INTO anggaran (user_id, kategori_id, bulan, tahun, jumlah) VALUES
 (2, 3, MONTH(CURDATE()), YEAR(CURDATE()),  800000),
