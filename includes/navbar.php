@@ -9,7 +9,7 @@ function navActive($dir, $current_dir) {
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
         <a class="navbar-brand fw-bold" href="<?= $base_url ?>/pages/dashboard/index.php">
-            <img src="<?= $base_url ?>/assets/images/logo.png" alt="FinanceNote" style="height:50px;">
+            <img src="<?= $base_url ?>/assets/images/logo.png" alt="FinanceNote">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
