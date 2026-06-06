@@ -2,7 +2,7 @@
 // konfigurasi/database.php
 
 $host     = 'localhost';
-$dbname   = 'finance_note';
+$dbname   = 'financenote';
 $username = 'root';
 $password = '';
 

@@ -1,8 +1,8 @@
-CREATE DATABASE IF NOT EXISTS finance_note
+CREATE DATABASE IF NOT EXISTS financenote
 CHARACTER SET utf8mb4
 COLLATE utf8mb4_general_ci;
 
-USE finance_note;
+USE financenote;
 
 -- Drop tabel lama (urutan terbalik dari FK) agar import ulang aman
 DROP TABLE IF EXISTS anggaran;
