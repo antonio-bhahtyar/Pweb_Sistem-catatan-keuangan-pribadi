@@ -58,3 +58,34 @@ CREATE TABLE anggaran (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (kategori_id) REFERENCES kategori(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ======================================================
+-- SEEDERS (Contoh Data Awal)
+-- Password default semua user: "password123"
+-- Hash dihasilkan dari password_hash('password123', PASSWORD_DEFAULT)
+-- ======================================================
+
+-- CATATAN: Jalankan database/seed.php SETELAH file SQL ini diimpor
+-- agar password ter-hash dengan benar (password_hash di runtime).
+-- Default password untuk admin & user demo: "password123"
+INSERT INTO users (nama_lengkap, email, password, role) VALUES
+('Administrator', 'admin@financenote.test', '__PLACEHOLDER__', 'admin'),
+('Budi User',     'budi@financenote.test',  '__PLACEHOLDER__', 'user');
+
+INSERT INTO kategori (user_id, nama_kategori, tipe, warna) VALUES
+(2, 'Gaji',       'pemasukan',   '#198754'),
+(2, 'Bonus',      'pemasukan',   '#20c997'),
+(2, 'Makan',      'pengeluaran', '#dc3545'),
+(2, 'Transport',  'pengeluaran', '#fd7e14'),
+(2, 'Tagihan',    'pengeluaran', '#6f42c1');
+
+INSERT INTO transaksi (user_id, kategori_id, tipe, jumlah, tanggal, keterangan) VALUES
+(2, 1, 'pemasukan',   5000000, CURDATE() - INTERVAL 10 DAY, 'Gaji bulan ini'),
+(2, 3, 'pengeluaran',  150000, CURDATE() - INTERVAL  5 DAY, 'Makan siang mingguan'),
+(2, 4, 'pengeluaran',   75000, CURDATE() - INTERVAL  3 DAY, 'Bensin'),
+(2, 5, 'pengeluaran',  300000, CURDATE() - INTERVAL  1 DAY, 'Listrik');
+
+INSERT INTO anggaran (user_id, kategori_id, bulan, tahun, jumlah) VALUES
+(2, 3, MONTH(CURDATE()), YEAR(CURDATE()),  800000),
+(2, 4, MONTH(CURDATE()), YEAR(CURDATE()),  500000),
+(2, 5, MONTH(CURDATE()), YEAR(CURDATE()), 1000000);

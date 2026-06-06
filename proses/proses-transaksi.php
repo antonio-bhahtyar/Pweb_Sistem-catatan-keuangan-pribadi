@@ -12,11 +12,29 @@ $user_id = $_SESSION['user_id'];
 
 // ====================== TAMBAH TRANSAKSI ======================
 if (isset($_POST['tambah_transaksi'])) {
-    $tipe        = $_POST['tipe'];
-    $kategori_id = $_POST['kategori_id'];
-    $jumlah      = $_POST['jumlah'];
-    $tanggal     = $_POST['tanggal'];
+    $tipe        = $_POST['tipe'] ?? '';
+    $kategori_id = $_POST['kategori_id'] ?? '';
+    $jumlah      = $_POST['jumlah'] ?? '';
+    $tanggal     = $_POST['tanggal'] ?? '';
     $keterangan  = trim($_POST['keterangan'] ?? '');
+
+    // Validasi server-side
+    if (!in_array($tipe, ['pemasukan', 'pengeluaran'], true)) {
+        $_SESSION['pesan'] = "Tipe transaksi tidak valid!";
+        $_SESSION['tipe_pesan'] = "danger";
+        header("Location: " . $base_url . "/pages/transaksi/add.php"); exit;
+    }
+    if (!is_numeric($jumlah) || (float)$jumlah <= 0) {
+        $_SESSION['pesan'] = "Jumlah harus angka lebih besar dari 0!";
+        $_SESSION['tipe_pesan'] = "danger";
+        header("Location: " . $base_url . "/pages/transaksi/add.php"); exit;
+    }
+    $d = DateTime::createFromFormat('Y-m-d', $tanggal);
+    if (!$d || $d->format('Y-m-d') !== $tanggal) {
+        $_SESSION['pesan'] = "Tanggal tidak valid!";
+        $_SESSION['tipe_pesan'] = "danger";
+        header("Location: " . $base_url . "/pages/transaksi/add.php"); exit;
+    }
 
     try {
         $check = $pdo->prepare("SELECT id FROM kategori WHERE id = ? AND user_id = ?");
@@ -63,12 +81,20 @@ if (isset($_POST['tambah_transaksi'])) {
 
 // ====================== EDIT TRANSAKSI ======================
 if (isset($_POST['edit_transaksi'])) {
-    $id          = $_POST['id'];
-    $tipe        = $_POST['tipe'];
-    $kategori_id = $_POST['kategori_id'];
-    $jumlah      = $_POST['jumlah'];
-    $tanggal     = $_POST['tanggal'];
+    $id          = $_POST['id'] ?? 0;
+    $tipe        = $_POST['tipe'] ?? '';
+    $kategori_id = $_POST['kategori_id'] ?? '';
+    $jumlah      = $_POST['jumlah'] ?? '';
+    $tanggal     = $_POST['tanggal'] ?? '';
     $keterangan  = trim($_POST['keterangan'] ?? '');
+
+    if (!in_array($tipe, ['pemasukan', 'pengeluaran'], true) ||
+        !is_numeric($jumlah) || (float)$jumlah <= 0 ||
+        !DateTime::createFromFormat('Y-m-d', $tanggal)) {
+        $_SESSION['pesan'] = "Data transaksi tidak valid!";
+        $_SESSION['tipe_pesan'] = "danger";
+        header("Location: " . $base_url . "/pages/transaksi/index.php"); exit;
+    }
 
     try {
         $check = $pdo->prepare("SELECT bukti FROM transaksi WHERE id = ? AND user_id = ?");

@@ -19,6 +19,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (empty($nama_lengkap) || empty($email) || empty($password)) {
         $error = "Semua field harus diisi!";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = "Format email tidak valid!";
+    } elseif (strlen($nama_lengkap) < 3) {
+        $error = "Nama lengkap minimal 3 karakter!";
     } elseif ($password !== $password2) {
         $error = "Password dan konfirmasi password tidak cocok!";
     } elseif (strlen($password) < 6) {
@@ -106,11 +110,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <div class="card-body p-5">
                 <?php if ($error): ?>
-                    <div class="alert alert-danger"><?= $error ?></div>
+                    <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>
                 <?php endif; ?>
 
                 <?php if ($success): ?>
-                    <div class="alert alert-success"><?= $success ?></div>
+                    <div class="alert alert-success"><?= htmlspecialchars($success) ?></div>
                 <?php endif; ?>
 
                 <form method="POST">
